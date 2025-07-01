@@ -9,7 +9,6 @@ const readline = require("readline-sync");
 let salario = readline.questionFloat("Digite seu salario: ");
 let abono = readline.questionFloat("digite o valor do abono: ");
 
-let novoSalario = () => {
-    return salario+=abono
-};
-console.log(novoSalario().toFixed(2));
+let novoSalario = () => salario+=abono;
+
+console.log(`seu novo salario: ${novoSalario().toFixed(2)}`);
