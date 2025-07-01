@@ -8,10 +8,10 @@ let saldo = 1000;
 
 switch (operacao) {
     case 1:
-        console.log(`saldo: R$ ${saldo}`)
+        console.log(`saldo: R$ ${saldo}`);
         break;
     case 2:
-        valor = readline.questionInt('valor: ')
+        valor = readline.questionInt('valor: ');
         let saque = valor>saldo ? "saldo insuficiente" :
         `Novo saldo: ${saldo -= valor}`; 
         console.log(saque);
