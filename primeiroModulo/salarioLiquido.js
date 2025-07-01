@@ -9,4 +9,4 @@ const salarioLiquido = () => {
     return salarioBruto+adcNoturno+
     (horasExtras*5)-descontos;
 };
-console.log(salarioLiquido().toFixed(2))
+console.log(salarioLiquido().toFixed(2));
