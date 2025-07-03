@@ -12,12 +12,12 @@ let numC = readline.questionFloat("Numero C: ");
 
 const somaMaior = () => {
     soma = numA+numB;
-    if(soma>numC) {
-        console.log(`${numA} + ${numB} = ${soma} > ${numC}`);
-        console.log("A soma de A+B e maior do que C");
-    } else {
-        console.log(`${numA} + ${numB} = ${soma} < ${numC}`);
-        console.log("A soma de A+B e menor do que C");
-    }
+
+    const diferenteIgual = soma>numC ? `Maior` :
+    soma<numC ? `menor` :
+    `igual`;
+
+    return `a soma de ${numA} + ${numB} = ${soma} e ${diferenteIgual} que ${numC}`
+    
 }
-somaMaior();
+console.log(somaMaior());
