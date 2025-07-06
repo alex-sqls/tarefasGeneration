@@ -40,6 +40,10 @@ export class Queue<Type> implements queueInterface<Type> {
    }
 
    printQueue(): void {
+      if (this.isEmpty()) {
+         console.log("A fila está vazia");
+         return;
+      }
       for (let i = 0; i < this.QueueData.length; i++) {
          console.log(this.QueueData[i]);
       }

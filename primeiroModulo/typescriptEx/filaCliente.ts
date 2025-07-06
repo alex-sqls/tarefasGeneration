@@ -1,10 +1,9 @@
-import ler = require("readline-sync")
+import ler = require("readline-sync");
 import { Queue } from "./queueMetodos"
 
-const fila = new Queue<string>()
+const fila = new Queue<string>();
 
-let continua: string = '';
-let valorOpcao: any;
+let continua: number;
 
     console.log("### 1 Adicionar cliente na fila ############");
     console.log("### 2 Listar todos os clientes ########");
@@ -12,21 +11,15 @@ let valorOpcao: any;
     console.log("### Digite 0 para sair #########");
 
 do {
-    let opcao = ler.questionInt("Entre com a opcao desejada: ")
-    
-    switch (opcao) {
-        case 1:
-            fila.enqueue(ler.question("Nome: "))
-            console.log("cliente adicionado")
-            break;
-        case 2:
-            fila.printQueue()
-            break;
-        case 3:
-            fila.dequeue()
-            break;
-        default:
-            break;
+    continua = ler.questionInt("Digite uma opcao: ")
+    if(continua == 1) {
+        fila.enqueue(ler.question("Nome: "));
+        console.log('cliente adicionado');
+    } else if (continua == 2){
+        fila.printQueue();
+    } else if(continua == 3) {
+        fila.dequeue();
     }
-    continua = ler.question("Digite s para continuar: ").toLowerCase()
-} while (continua === 's');
+
+} while (continua !== 0);
+console.log("O programa foi finalizado!");
